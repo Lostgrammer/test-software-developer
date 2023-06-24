@@ -2,6 +2,7 @@ package com.getechnologiesmx.springboot.backend.models.entity;
 
 import java.io.Serializable;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,7 +18,9 @@ public class Persona implements Serializable{
 	private Long id;
 
 	private String nombre;
+	@Column(name = "apellido_paterno")
 	private String apellidoPaterno;
+	@Column(name = "apellido_materno")
 	private String apellidoMaterno;
 	private String identificacion;
 
