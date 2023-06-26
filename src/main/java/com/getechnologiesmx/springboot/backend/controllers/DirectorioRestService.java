@@ -10,15 +10,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.getechnologiesmx.springboot.backend.models.entity.Persona;
-import com.getechnologiesmx.springboot.backend.models.servicedao.IPersonaRepository;
+import com.getechnologiesmx.springboot.backend.models.servicedao.IDirectorio;
 
 @CrossOrigin(origins = {"http://localhost:4200"})	
 @RestController
 @RequestMapping("/api")
-public class PersonaRestController {
+public class DirectorioRestService {
 	
 	@Autowired
-	private IPersonaRepository personaRepository;
+	private IDirectorio personaRepository;
 	
 	@GetMapping("/personas")
 	public List<Persona> index(){
