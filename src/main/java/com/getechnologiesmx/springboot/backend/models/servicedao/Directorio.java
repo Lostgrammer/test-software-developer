@@ -13,36 +13,36 @@ import com.getechnologiesmx.springboot.backend.models.entity.Persona;
 public class Directorio implements IDirectorio{
 	
 	@Autowired
-	private PersonaRepository personaDao;
+	private PersonaRepository personaRepository;
 	
 	@Override
 	@Transactional(readOnly = true)
 	public List<Persona> findAll() {
-		return (List<Persona>) personaDao.findAll();
+		return (List<Persona>) personaRepository.findAll();
 	}
 	
-	@Override
-	@Transactional(readOnly = true)
-	public Persona findbyIdentificacion(String identificacion) {
-		return personaDao.findbyIdentificacion(identificacion);
-	}
+//	@Override
+//	@Transactional(readOnly = true)
+//	public Persona findbyIdentificacion(String identificacion) {
+//		return personaRepository.findbyIdentificacion(identificacion);
+//	}
 	
 	@Override
 	@Transactional(readOnly = true)
 	public Persona findbyId(Long id) {
-		return personaDao.findById(id).orElse(null);
+		return personaRepository.findById(id).orElse(null);
 	}
 
 	@Override
 	@Transactional
 	public Persona save(Persona persona) {
-		return personaDao.save(persona);
+		return personaRepository.save(persona);
 	}
 
 	@Override
 	@Transactional
 	public void delete(Long id) {
-		personaDao.delete(null);
+		personaRepository.deleteById(id);
 		
 	}
 }
