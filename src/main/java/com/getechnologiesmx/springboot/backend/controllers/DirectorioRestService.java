@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.getechnologiesmx.springboot.backend.models.entity.Persona;
 import com.getechnologiesmx.springboot.backend.models.servicedao.IDirectorio;
 
-import jakarta.websocket.ClientEndpoint;
 
 @CrossOrigin(origins = {"http://localhost:4200"})	
 @RestController
