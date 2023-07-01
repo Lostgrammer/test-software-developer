@@ -25,40 +25,40 @@ import com.getechnologiesmx.springboot.backend.models.servicedao.IDirectorio;
 public class DirectorioRestService {
 	
 	@Autowired
-	private IDirectorio personaRepository;
+	private IDirectorio directorio;
 	
 	@GetMapping("/personas")
 	public List<Persona> index(){
-		return personaRepository.findAll();
+		return directorio.findAll();
 	}
 	
 	@GetMapping("/personas/{id}")
 	public Persona showById(@PathVariable Long id) {
-		return personaRepository.findbyId(id);
+		return directorio.findbyId(id);
 	}
 	
 	@PostMapping("/personas")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Persona create(@RequestBody Persona persona) {
-		return personaRepository.save(persona);
+		return directorio.save(persona);
 	}
 	
 	@PutMapping("/personas/{id}")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Persona update(@RequestBody Persona persona, @PathVariable Long id) {
-		Persona personaActual = personaRepository.findbyId(id);
+		Persona personaActual = directorio.findbyId(id);
 		
 		personaActual.setApellidoPaterno(persona.getApellidoPaterno());
 		personaActual.setApellidoMaterno(persona.getApellidoMaterno());
 		personaActual.setNombre(persona.getNombre());
 		personaActual.setIdentificacion(persona.getIdentificacion());
-		return personaRepository.save(personaActual);
+		return directorio.save(personaActual);
 	}
 	
 	@DeleteMapping("/personas/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void delete(@PathVariable Long id ) {
-		personaRepository.delete(id);
+		directorio.delete(id);
 	}
 	
 }
